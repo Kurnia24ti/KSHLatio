@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A1F11"
+    android:padding="24dp">
+
+    <!-- Header / Top Bar -->
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="🌱 SawitMON"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="≡"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Konten Utama (Tengah) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <!-- Judul Aplikasi -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SawitMon"
+            android:textColor="#2ECC71"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
+        <!-- Subjudul -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="Platform Monitoring Perkebunan\nKelapa Sawit Digital Terbaik"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <!-- Deskripsi -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:lineSpacingExtra="4dp"
+            android:text="Sistem manajemen cerdas untuk meningkatkan produktivitas kebun sawit Anda dengan teknologi IoT dan analisis data real-time."
+            android:textColor="#B0BEC5"
+            android:textSize="13sp" />
+
+        <!-- Tombol Mulai Sekarang -->
+        <Button
+            android:id="@+id/btnMulaiSekarang"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="#2ECC71"
+            android:text="Mulai Sekarang ➔"
+            android:textAllCaps="false"
+            android:textColor="#0A1F11"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <!-- Footer Kecil -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="📈 Pantau kebun Anda kapan saja, di mana saja"
+            android:textColor="#81C784"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <!-- Bottom Indicator -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="JELAJAHI\n∨"
+        android:gravity="center"
+        android:textColor="#81C784"
+        android:textSize="10sp" />
+
+</RelativeLayout>
