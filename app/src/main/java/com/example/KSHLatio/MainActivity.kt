@@ -1,9 +1,11 @@
+@file:Suppress("PackageName")
+
 package com.example.KSHLatio
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.KSHLatio.databinding.ActivityMainBinding
+import com.example.ksh_latio.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 

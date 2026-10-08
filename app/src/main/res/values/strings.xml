@@ -1,12 +1,33 @@
 <resources>
-    <string name="app_name">KSHLatio</string>
+    <string name="app_name">SawitMON</string>
     <string name="btn_my_project">My Project</string>
     <string name="main_title">Selamat Datang di App Snack</string>
     <string name="main_subtitle">Klik tombol di bawah untuk melihat informasi detail snack.</string>
 
     <!-- Detail Snack Data -->
-    <string name="snack_name">Tango Wafer Cokelat</string>
-    <string name="snack_description">Wafer renyah ciptaan Master Chef Tango dengan lapisan krim cokelat lezat yang tebal di setiap tumpukannya.</string>
+    <string name="snack_name">Latio Pedas Gurih</string>
+    <string name="snack_description">Camilan Riangan Dengan Sedikit Pedah Menggugah Selera Indonesia</string>
     <string name="nutrition_title">Komposisi &amp; Informasi Gizi</string>
     <string name="nutrition_details">• Lemak Total: 6g\n• Protein: 2g\n• Karbohidrat Total: 17g\n• Gula: 8g\n• Garam (Natrium): 45mg</string>
+
+    <!-- SawitMON Login UI Strings -->
+    <string name="sawitmon_app_name">SawitMON</string>
+    <string name="hero_title">Kelola kebun Anda lebih cerdas</string>
+    <string name="hero_subtitle">Pantau aktivitas, tenaga kerja, dan hasil panen dalam satu dashboard terpadu.</string>
+    <string name="form_title">Masuk ke akun Anda</string>
+    <string name="form_subtitle">Akses dashboard untuk mengelola semua data kebun sawit, tugas, dan panen Anda.</string>
+    <string name="label_hak_akses">Hak Akses</string>
+    <string name="role_petani">Petani</string>
+    <string name="role_pekerja">Pekerja</string>
+    <string name="label_email">Email</string>
+    <string name="hint_email">nama@email.com</string>
+    <string name="label_password">Password</string>
+    <string name="hint_password">Masukkan password Anda</string>
+    <string name="remember_me">Ingat saya</string>
+    <string name="forgot_password">Lupa password?</string>
+    <string name="btn_login_dashboard">Masuk ke dashboard</string>
+    <string name="divider_or">atau</string>
+    <string name="btn_login_google">Masuk dengan Google</string>
+    <string name="no_account_prefix">Belum punya akun?&#160;</string>
+    <string name="register_now">Daftar sekarang</string>
 </resources>

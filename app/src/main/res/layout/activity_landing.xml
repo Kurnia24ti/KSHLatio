@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#0A1F11"
@@ -49,11 +50,14 @@
             android:textSize="36sp"
             android:textStyle="bold" />
 
-        <!-- Subjudul -->
+        <!-- Subjudul (Klik untuk buka WebView Hai Sawit) -->
         <TextView
+            android:id="@+id/tvSubjudul"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:clickable="true"
+            android:focusable="true"
             android:gravity="center"
             android:text="Platform Monitoring Perkebunan\nKelapa Sawit Digital Terbaik"
             android:textColor="#FFFFFF"
@@ -100,8 +104,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="JELAJAHI\n∨"
         android:gravity="center"
+        android:text="JELAJAHI\n∨"
         android:textColor="#81C784"
         android:textSize="10sp" />
 

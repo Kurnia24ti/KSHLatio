@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="125dp"
+    android:viewportWidth="400"
+    android:viewportHeight="250">
+    <!-- Dark forest green background representing oil palm plantation -->
+    <path
+        android:fillColor="#0B2A18"
+        android:pathData="M0,0h400v250h-400z"/>
+    <path
+        android:fillColor="#123B22"
+        android:pathData="M0,110 Q50,50 100,110 Q150,50 200,110 Q250,50 300,110 Q350,50 400,110 L400,250 L0,250 Z"/>
+    <path
+        android:fillColor="#1B4D2E"
+        android:pathData="M0,150 Q60,100 120,150 Q180,100 240,150 Q300,100 360,150 Q400,120 400,150 L400,250 L0,250 Z"/>
+</vector>

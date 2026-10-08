@@ -1,10 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary_color">#E53935</color>
-    <color name="primary_dark">#C62828</color>
+    <!-- Warna Utama SawitMON -->
+    <color name="green_primary">#00A86B</color>
+    <color name="green_primary_dark">#008B57</color>
+    <color name="green_light">#E6F6EE</color>
+
+    <color name="primary_color">#00A86B</color>
+    <color name="primary_dark">#008B57</color>
     <color name="accent_color">#FFB300</color>
     <color name="background_light">#F8F9FA</color>
     <color name="card_background">#FFFFFF</color>
+
+    <!-- Warna Teks -->
     <color name="text_primary">#212121</color>
     <color name="text_secondary">#757575</color>
+    <color name="text_dark">#0F2A1D</color>
+    <color name="text_gray">#6B7B72</color>
+
+    <!-- Border & Input Background -->
+    <color name="border">#E3E8E5</color>
+    <color name="input_bg">#F7FAF8</color>
+    <color name="white">#FFFFFF</color>
+
+    <!-- Google Branding -->
+    <color name="google_blue">#4285F4</color>
 </resources>
