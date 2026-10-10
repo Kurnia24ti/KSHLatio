@@ -54,7 +54,13 @@ class LoginActivity : AppCompatActivity() {
             if (email.isBlank() || pass.isBlank()) {
                 Toast.makeText(this, "Email dan password wajib diisi", Toast.LENGTH_SHORT).show()
             } else {
-                startActivity(Intent(this, MainActivity::class.java))
+                // Simpan status login di SharedPreferences
+                val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
+                sharedPref.edit().putBoolean("isLoggedIn", true).apply()
+
+                val intent = Intent(this, LandingActivity::class.java)
+                startActivity(intent)
+                finish()
             }
         }
 

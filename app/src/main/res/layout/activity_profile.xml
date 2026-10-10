@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#0B2818">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Toolbar Header -->
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbarProfile"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#0B2818"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            app:navigationIconTint="@color/white"
+            app:title="Profil Developer"
+            app:titleTextColor="@color/white"/>
+
+        <!-- Header Card Section: Avatar & Dev Name -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingStart="24dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="24dp">
+
+            <FrameLayout
+                android:layout_width="104dp"
+                android:layout_height="104dp"
+                android:background="@drawable/bg_sheet"
+                android:padding="3dp">
+
+                <ImageView
+                    android:id="@+id/ivAvatar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_profile_avatar"
+                    tools:ignore="ContentDescription" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tvDevName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="Kurnia (Developer SawitMON)"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Lead Mobile Developer • TI G24"
+                android:textColor="#2ECC71"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Profile Content Sheet Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_sheet"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Card 1: Social Media -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🌐 Sosial Media &amp; Kontak"
+                android:textColor="@color/text_dark"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/btnGithub"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_input"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_github"
+                    tools:ignore="ContentDescription" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="GitHub"
+                        android:textColor="@color/text_dark"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="github.com/Kurnia24ti"
+                        android:textColor="@color/text_gray"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_arrow_forward"
+                    app:tint="@color/text_gray"
+                    tools:ignore="ContentDescription" />
+            </LinearLayout>
+
+            <!-- Card 2: Hobi & Minat -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="🎯 Hobi &amp; Minat"
+                android:textColor="@color/text_dark"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_input"
+                android:orientation="vertical"
+                android:padding="14dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="4dp"
+                    android:text="• Android Native &amp; Kotlin Mobile App Development\n• IoT &amp; Perkebunan Kelapa Sawit Digital\n• UI/UX Design &amp; Clean Architecture\n• Eksplorasi Teknologi Terkini"
+                    android:textColor="@color/text_dark"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <!-- Card 3: Kekuatan Terbesar -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="💪 Kekuatan Terbesar (Greatest Strength)"
+                android:textColor="@color/text_dark"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_input"
+                android:orientation="vertical"
+                android:padding="14dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="4dp"
+                    android:text="⭐ Problem Solving &amp; Debugging Handal\n⭐ Penguasaan Arsitektur Android Modern (MVVM/MVI, ViewBinding, SharedPreferences)\n⭐ Kemampuan Belajar Cepat &amp; Adaptasi Tinggi\n⭐ Ketelitian Tinggi dalam Desain UI/UX Presisi"
+                    android:textColor="@color/text_dark"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

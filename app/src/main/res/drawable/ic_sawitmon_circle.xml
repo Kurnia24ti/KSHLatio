@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+
+    <!-- Circular White Background Base -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M100,100 m-96,0 a96,96 0 1,0 192,0 a96,96 0 1,0 -192,0" />
+
+    <!-- Outer Green Ring Border -->
+    <path
+        android:fillColor="#00A86B"
+        android:pathData="M100,6 C151.91,6 194,48.09 194,100 C194,151.91 151.91,194 100,194 C48.09,194 6,151.91 6,100 C6,48.09 48.09,6 100,6 Z M100,12 C51.4,12 12,51.4 12,100 C12,148.6 51.4,188 100,188 C148.6,188 188,148.6 188,100 C188,51.4 148.6,12 100,12 Z" />
+
+    <!-- Inner Green Ring Border -->
+    <path
+        android:fillColor="#00A86B"
+        android:pathData="M100,22 C143.08,22 178,56.92 178,100 C178,143.08 143.08,178 100,178 C56.92,178 22,143.08 22,100 C22,56.92 56.92,22 100,22 Z M100,26 C59.13,26 26,59.13 26,100 C26,140.87 59.13,174 100,174 C140.87,174 174,140.87 174,100 C174,59.13 140.87,26 100,26 Z" />
+
+    <!-- Circular Text: SawitMON -->
+    <!-- S -->
+    <path
+        android:fillColor="#00A86B"
+        android:pathData="M40,58 C38,55 42,50 46,48 C50,46 54,49 52,52 C50,55 44,56 46,60 C48,64 54,63 56,59 L59,61 C56,67 47,68 43,62 Z" />
+    <!-- a -->
+    <path
+        android:fillColor="#00A86B"
+        android:pathData="M59,42 C63,40 67,43 66,47 C65,51 60,52 57,49 C55,46 56,43 59,42 Z M60,45 C58,45 58,48 60,49 C62,50 64,48 63,46 C62,44 60,45 60,45 Z" />
+    <!-- w -->
+    <path
+        android:fillColor="#00A86B"
+        android:pathData="M70,36 L74,47 L77,38 L81,46 L85,33 L88,34 L83,49 L79,41 L75,50 L70,36 Z" />
+    <!-- i -->
+    <path
+        android:fillColor="#00A86B"
+        android:pathData="M92,30 L95,30 L93,44 L90,44 Z M93,25 C94,25 95,26 95,27 C95,28 94,29 93,29 C92,29 91,28 91,27 C91,26 92,25 93,25 Z" />
+    <!-- t -->
+    <path
+        android:fillColor="#00A86B"
+        android:pathData="M99,29 L104,29 L104,32 L101,32 L101,41 C101,43 103,43 104,42 L104,45 C101,46 98,44 98,41 L98,32 L96,32 L96,29 L98,29 Z" />
+    <!-- M -->
+    <path
+        android:fillColor="#00A86B"
+        android:pathData="M110,30 L115,44 L119,31 L124,45 L129,32 L132,33 L126,48 L121,35 L117,47 L111,33 Z" />
+    <!-- O -->
+    <path
+        android:fillColor="#00A86B"
+        android:pathData="M139,37 C145,39 148,45 145,51 C142,56 136,58 131,55 C125,52 123,46 126,41 C129,35 134,34 139,37 Z M137,41 C134,39 130,41 129,45 C127,49 129,52 132,54 C136,55 139,53 141,49 C142,45 140,42 137,41 Z" />
+    <!-- N -->
+    <path
+        android:fillColor="#00A86B"
+        android:pathData="M148,51 L151,52 L159,67 L159,57 L162,58 L162,73 L159,72 L151,57 L151,67 L148,66 Z" />
+
+    <!-- Palm Tree Illustration -->
+    <!-- Trunk -->
+    <path
+        android:fillColor="#00A86B"
+        android:pathData="M94,112 C93,125 90,140 82,152 C91,152 101,148 108,138 C102,130 99,120 98,112 Z" />
+
+    <!-- Coconuts/Fruits -->
+    <path
+        android:fillColor="#00A86B"
+        android:pathData="M92,108 C90,108 88,110 88,112 C88,114 90,116 92,116 C94,116 96,114 96,112 C96,110 94,108 92,108 Z M100,107 C98,107 96,109 96,111 C96,113 98,115 100,115 C102,115 104,113 104,111 C104,109 102,107 100,107 Z" />
+
+    <!-- Palm Leaves -->
+    <path
+        android:fillColor="#00A86B"
+        android:pathData="M96,108 C94,95 100,75 118,63 C112,70 108,82 108,92 C114,84 122,76 132,71 C122,79 116,88 113,97 C122,92 132,88 143,87 C132,93 123,100 115,107 C110,107 103,107 96,108 Z" />
+    <path
+        android:fillColor="#00A86B"
+        android:pathData="M92,107 C85,95 72,83 55,78 C65,83 72,92 76,100 C68,93 56,88 44,88 C55,93 64,100 69,107 C58,103 46,102 35,103 C47,107 58,111 67,114 C73,110 82,108 92,107 Z" />
+    <path
+        android:fillColor="#00A86B"
+        android:pathData="M90,111 C80,111 65,114 53,121 C64,119 75,118 84,116 C75,122 64,129 55,138 C68,131 80,125 88,119 Z" />
+    <path
+        android:fillColor="#00A86B"
+        android:pathData="M98,111 C108,112 122,115 133,122 C123,120 112,118 103,116 C112,121 123,128 131,136 C118,130 107,123 98,117 Z" />
+
+    <!-- Wave Lines at base -->
+    <path
+        android:fillColor="#00A86B"
+        android:pathData="M64,152 C75,142 90,140 102,148 C115,156 128,158 142,150 C146,148 150,144 153,141 C151,146 146,151 140,154 C126,162 111,160 98,151 C88,144 76,145 66,153 Z" />
+    <path
+        android:fillColor="#00A86B"
+        android:pathData="M70,160 C80,152 92,150 102,156 C112,162 124,163 136,157 C142,154 146,150 150,146 C148,151 143,155 136,159 C122,166 109,165 98,158 C90,152 80,153 72,160 Z" />
+
+</vector>

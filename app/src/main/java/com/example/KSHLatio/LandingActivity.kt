@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -36,5 +37,34 @@ class LandingActivity : AppCompatActivity() {
             }
             startActivity(intent)
         }
+
+        // Tombol Profil -> Membuka ProfileActivity
+        findViewById<TextView>(R.id.btnMenuProfil)?.setOnClickListener {
+            startActivity(Intent(this, ProfileActivity::class.java))
+        }
+
+        // Tombol Logout
+        findViewById<TextView>(R.id.btnLogout)?.setOnClickListener {
+            showLogoutConfirmationDialog()
+        }
+    }
+
+    private fun showLogoutConfirmationDialog() {
+        AlertDialog.Builder(this)
+            .setTitle("Konfirmasi Keluar")
+            .setMessage("Apakah Anda yakin ingin keluar dari akun?")
+            .setPositiveButton("Ya") { _, _ ->
+                val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
+                sharedPref.edit().putBoolean("isLoggedIn", false).apply()
+
+                val intent = Intent(this, LoginActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
+                finish()
+            }
+            .setNegativeButton("Batal") { dialog, _ ->
+                dialog.dismiss()
+            }
+            .show()
     }
 }

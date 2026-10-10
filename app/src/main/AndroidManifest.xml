@@ -12,24 +12,32 @@
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.TNSTango">
 
+        <!-- Splash Screen sebagai LAUNCHER utama -->
         <activity
-            android:name="com.example.KSHLatio.LoginActivity"
-            android:exported="true"/>
-
-        <activity
-            android:name="com.example.KSHLatio.WebActivity"
-            android:exported="true"/>
-
-        <!-- Halaman utama yang pertama kali tampil saat aplikasi dibuka -->
-        <activity
-            android:name="com.example.KSHLatio.LandingActivity"
-            android:exported="true"
-            android:windowSoftInputMode="adjustResize">
+            android:name="com.example.KSHLatio.SplashActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name="com.example.KSHLatio.ProfileActivity"
+            android:exported="true" />
+
+        <activity
+            android:name="com.example.KSHLatio.LoginActivity"
+            android:exported="true" />
+
+        <activity
+            android:name="com.example.KSHLatio.WebActivity"
+            android:exported="true" />
+
+        <activity
+            android:name="com.example.KSHLatio.LandingActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
 
         <activity
             android:name="com.example.KSHLatio.MainActivity"
