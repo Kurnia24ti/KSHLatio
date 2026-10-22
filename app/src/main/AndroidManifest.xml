@@ -23,6 +23,14 @@
         </activity>
 
         <activity
+            android:name="com.example.KSHLatio.BaseActivity"
+            android:exported="true" />
+
+        <activity
+            android:name="com.example.KSHLatio.DetailActivity"
+            android:exported="true" />
+
+        <activity
             android:name="com.example.KSHLatio.ProfileActivity"
             android:exported="true" />
 

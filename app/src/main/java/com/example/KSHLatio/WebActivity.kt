@@ -70,3 +70,5 @@ class WebActivity : AppCompatActivity() {
         }
     }
 }
+
+typealias WebViewActivity = WebActivity

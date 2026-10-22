@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:gravity="center_vertical" android:orientation="horizontal" android:paddingVertical="10dp">
+
+        <ImageView android:id="@+id/ivIcon"
+            android:layout_width="36dp" android:layout_height="36dp"
+            android:background="@drawable/bg_circle_mint" android:padding="9dp"
+            android:src="@drawable/ic_description" app:tint="@color/primary"
+            tools:ignore="ContentDescription" />
+
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_marginStart="12dp" android:layout_weight="1" android:orientation="vertical">
+            <TextView android:id="@+id/tvJudul"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:textColor="@color/text_dark" android:textSize="13sp" android:textStyle="bold" />
+            <TextView android:id="@+id/tvDetail"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:textColor="@color/text_gray" android:textSize="10sp"
+                tools:ignore="SmallSp" />
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:gravity="end" android:orientation="vertical">
+            <TextView android:id="@+id/tvStatus"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:background="@drawable/bg_badge_blue"
+                android:paddingHorizontal="8dp" android:paddingVertical="2dp"
+                android:textColor="@color/blue" android:textSize="9sp"
+                tools:ignore="SmallSp" />
+            <TextView android:id="@+id/tvWaktu"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="4dp" android:textColor="@color/text_gray" android:textSize="9sp"
+                tools:ignore="SmallSp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View android:id="@+id/divider"
+        android:layout_width="match_parent" android:layout_height="1dp"
+        android:background="@color/stroke" />
+</LinearLayout>

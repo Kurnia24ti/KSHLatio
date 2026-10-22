@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SawitMON</string>
+    <string name="app_name">SawitMon</string>
     <string name="btn_my_project">My Project</string>
     <string name="main_title">Selamat Datang di App Snack</string>
     <string name="main_subtitle">Klik tombol di bawah untuk melihat informasi detail snack.</string>
@@ -30,4 +30,62 @@
     <string name="btn_login_google">Masuk dengan Google</string>
     <string name="no_account_prefix">Belum punya akun?&#160;</string>
     <string name="register_now">Daftar sekarang</string>
+
+    <!-- Navigasi + Drawer -->
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_kebun">Kebun</string>
+    <string name="nav_aktivitas">Aktivitas</string>
+    <string name="nav_akun">Akun</string>
+    <string name="drawer_portal">Portal Petani</string>
+    <string name="drawer_data_kebun">Data Kebun</string>
+    <string name="drawer_riwayat">Riwayat Data</string>
+    <string name="drawer_profil">Profil</string>
+    <string name="drawer_logout">Logout</string>
+
+    <!-- Umum -->
+    <string name="see_all">Lihat semua</string>
+    <string name="see_detail">Lihat detail</string>
+    <string name="brand_name">SawitMON</string>
+
+    <!-- Dashboard (Home) -->
+    <string name="home_panel">PANEL PEMILIK</string>
+    <string name="home_title">Ringkasan Kinerja Kebun Anda</string>
+    <string name="home_ops">Operasional hari ini</string>
+    <string name="home_chart_title">Grafik Hasil Panen</string>
+    <string name="home_chart_sub">Tren panen selama 6 bulan terakhir</string>
+    <string name="home_chart_legend">Hasil panen (kg)</string>
+    <string name="home_chart_growth">+ 19,4% semester ini</string>
+    <string name="home_period">6 bulan ▾</string>
+    <string name="home_recent">Aktivitas Terbaru</string>
+
+    <!-- Status perangkat (Aktivitas) -->
+    <string name="akt_brand">TANI CERDAS</string>
+    <string name="akt_header">Dashboard</string>
+    <string name="akt_welcome_label">SELAMAT DATANG</string>
+    <string name="akt_welcome_title">Selamat datang</string>
+    <string name="akt_welcome_desc">Cek kegiatan pertanian Anda hari ini dan pantau hasil kebun dengan mudah.</string>
+    <string name="akt_create">Buat aksi</string>
+    <string name="akt_summary">Ringkasan aktivitas</string>
+    <string name="akt_today">Hari ini</string>
+    <string name="akt_chart_title">Grafik Aktivitas Bulanan</string>
+    <string name="akt_chart_sub">Total pengajuan, penanganan, dan panen.</string>
+    <string name="akt_month_default">Oktober ▾</string>
+    <string name="akt_no_data">Belum ada data</string>
+    <string name="akt_recent">Aktivitas Terbaru</string>
+    <string name="tab_pengajuan">Pengajuan</string>
+    <string name="tab_penanganan">Penanganan</string>
+    <string name="tab_panen">Panen</string>
+
+    <!-- Kebun (Dashboard Petani) -->
+    <string name="kbn_label">DASHBOARD PETANI</string>
+    <string name="kbn_welcome">Selamat datang,\n%1$s!</string>
+    <string name="kbn_desc">Pantau kebun, hasil panen, dan aktivitas harian Anda dalam satu tempat.</string>
+    <string name="kbn_status">● Kebun aktif · Kondisi baik</string>
+    <string name="kbn_summary">Ringkasan kebun</string>
+    <string name="kbn_recent">Aktivitas terbaru</string>
+
+    <!-- Akun -->
+    <string name="akun_help">Pusat Bantuan</string>
+    <string name="akun_about">Tentang Aplikasi</string>
+    <string name="back">Kembali</string>
 </resources>

@@ -66,7 +66,7 @@ class LoginActivity : AppCompatActivity() {
 
                 Log.e("Login", "Berhasil login: $email")
 
-                val intent = Intent(this, LandingActivity::class.java)
+                val intent = Intent(this, BaseActivity::class.java)
                 startActivity(intent)
                 finish()
             }

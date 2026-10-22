@@ -11,9 +11,9 @@ object DummyData {
     )
 
     val aktivitasTerbaru = listOf(
-        Aktivitas("Pengajuan B.A. 4", "Blok C · Panen selesai", "Disetujui", "08.22"),
-        Aktivitas("Pengajuan B.A. 6", "Blok A · Menunggu verifikasi", "Diajukan", "08.15"),
-        Aktivitas("Pengajuan B.A. 1", "Blok D · Laporan tertunda", "Diajukan", "Kemarin")
+        Aktivitas("Pengajuan B.A. 4", "Blok C · Panen selesai", "Diajukan", "08.42"),
+        Aktivitas("Pengajuan B.A. 6", "Blok A · Menunggu verifikasi", "Diajukan", "08.16"),
+        Aktivitas("Pengajuan B.A. 1", "Blok D · Laporan baru", "Diajukan", "Kemarin")
     )
 
     val panenBulanan = listOf(
@@ -25,4 +25,6 @@ object DummyData {
         "Januari", "Februari", "Maret", "April", "Mei", "Juni",
         "Juli", "Agustus", "September", "Oktober", "November", "Desember"
     )
+
+    val periode = arrayOf("3 bulan", "6 bulan", "12 bulan")
 }
