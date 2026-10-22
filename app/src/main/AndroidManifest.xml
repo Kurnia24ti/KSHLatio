@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.TNSTango">
+        android:theme="@style/Theme.KSHLatio">
 
         <!-- Splash Screen sebagai LAUNCHER utama -->
         <activity
