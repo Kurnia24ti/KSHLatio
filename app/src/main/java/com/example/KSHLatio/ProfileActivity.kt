@@ -5,6 +5,7 @@ package com.example.KSHLatio
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ksh_latio.databinding.ActivityProfileBinding
 
@@ -16,6 +17,7 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        Log.e("onCreate", "ProfileActivity dibuat pertama kali")
 
         // Toolbar navigation back
         binding.toolbarProfile.setNavigationOnClickListener {
@@ -30,5 +32,15 @@ class ProfileActivity : AppCompatActivity() {
             } catch (_: Exception) {
             }
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.e("onStart", "ProfileActivity terlihat di layar")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.e("onDestroy", "ProfileActivity dihapus dari stack")
     }
 }

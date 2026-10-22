@@ -6,6 +6,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
+import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.ksh_latio.R
@@ -17,6 +18,7 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        Log.e("onCreate", "LoginActivity dibuat pertama kali")
 
         // Pilih hak akses (Petani vs Pekerja)
         val btnPetani = findViewById<TextView>(R.id.btnPetani)
@@ -56,7 +58,13 @@ class LoginActivity : AppCompatActivity() {
             } else {
                 // Simpan status login di SharedPreferences
                 val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
-                sharedPref.edit().putBoolean("isLoggedIn", true).apply()
+                val editor = sharedPref.edit()
+                editor.putBoolean("isLoggedIn", true)
+                editor.putBoolean("isLogin", true)
+                editor.putString("username", email)
+                editor.apply()
+
+                Log.e("Login", "Berhasil login: $email")
 
                 val intent = Intent(this, LandingActivity::class.java)
                 startActivity(intent)
@@ -74,5 +82,15 @@ class LoginActivity : AppCompatActivity() {
         findViewById<LinearLayout>(R.id.btnGoogle)?.setOnClickListener {
             Toast.makeText(this, "Login Google segera hadir", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.e("onStart", "LoginActivity terlihat di layar")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.e("onDestroy", "LoginActivity dihapus dari stack")
     }
 }

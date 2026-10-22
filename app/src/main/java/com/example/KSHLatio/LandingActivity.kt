@@ -4,6 +4,7 @@ package com.example.KSHLatio
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -18,6 +19,8 @@ class LandingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_landing)
+        Log.e("onCreate", "LandingActivity dibuat pertama kali")
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -55,7 +58,12 @@ class LandingActivity : AppCompatActivity() {
             .setMessage("Apakah Anda yakin ingin keluar dari akun?")
             .setPositiveButton("Ya") { _, _ ->
                 val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
-                sharedPref.edit().putBoolean("isLoggedIn", false).apply()
+                val editor = sharedPref.edit()
+                editor.putBoolean("isLoggedIn", false)
+                editor.putBoolean("isLogin", false)
+                editor.apply()
+
+                Log.e("Logout", "User berhasil logout")
 
                 val intent = Intent(this, LoginActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
@@ -66,5 +74,15 @@ class LandingActivity : AppCompatActivity() {
                 dialog.dismiss()
             }
             .show()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.e("onStart", "LandingActivity terlihat di layar")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.e("onDestroy", "LandingActivity dihapus dari stack")
     }
 }
