@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ===================================================================== -->
+<!-- KUIS PERTEMUAN 8 - QUIZ TIF                                            -->
+<!-- SOAL 2: LAYOUT FORM REGISTRASI (NAMA, EMAIL, USERNAME, PASSWORD)       -->
+<!-- File: activity_register.xml                                          -->
+<!-- ===================================================================== -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Lengkapi Pendaftaran"
+            android:textColor="@color/text_dark"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Isi data akun Anda untuk menyelesaikan pembuatan akun SawitMON."
+            android:textColor="@color/text_gray"
+            android:textSize="13sp" />
+
+        <!-- ============================================================= -->
+        <!-- SOAL 2: FIELD 1 - NAMA                                        -->
+        <!-- ============================================================= -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Nama Lengkap"
+            android:textColor="@color/text_dark"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etRegisterNama"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/bg_input"
+            android:hint="Masukkan Nama Lengkap"
+            android:inputType="textPersonName"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:textColor="@color/text_dark"
+            android:textSize="14sp" />
+
+        <!-- ============================================================= -->
+        <!-- SOAL 2: FIELD 2 - EMAIL (AUTOMATICALLY FILLED & LOCKED)       -->
+        <!-- ============================================================= -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Alamat Email (Gmail)"
+            android:textColor="@color/text_dark"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etRegisterEmail"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/bg_input"
+            android:enabled="false"
+            android:focusable="false"
+            android:inputType="none"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:textColor="#757575"
+            android:textSize="14sp" />
+
+        <!-- ============================================================= -->
+        <!-- SOAL 2: FIELD 3 - USERNAME (TANPA SPASI)                      -->
+        <!-- ============================================================= -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Username (Tanpa Spasi)"
+            android:textColor="@color/text_dark"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etRegisterUsername"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/bg_input"
+            android:hint="Masukkan Username"
+            android:inputType="textNoSuggestions"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:textColor="@color/text_dark"
+            android:textSize="14sp" />
+
+        <!-- ============================================================= -->
+        <!-- SOAL 2: FIELD 4 - PASSWORD (MINIMAL 6 KARAKTER)               -->
+        <!-- ============================================================= -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Password (Min. 6 Karakter)"
+            android:textColor="@color/text_dark"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etRegisterPassword"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/bg_input"
+            android:hint="Masukkan Password"
+            android:inputType="textPassword"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:textColor="@color/text_dark"
+            android:textSize="14sp" />
+
+        <!-- ============================================================= -->
+        <!-- SOAL 2: TOMBOL REGISTRASI AKUN                                -->
+        <!-- ============================================================= -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnProsesRegistrasi"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="28dp"
+            android:text="Registrasi Akun"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/green_primary"
+            app:cornerRadius="14dp" />
+
+    </LinearLayout>
+</ScrollView>

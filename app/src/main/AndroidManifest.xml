@@ -39,6 +39,18 @@
             android:exported="true" />
 
         <activity
+            android:name="com.example.KSHLatio.GmailInputActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.example.KSHLatio.RegisterActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.example.KSHLatio.RegisterSuccessActivity"
+            android:exported="false" />
+
+        <activity
             android:name="com.example.KSHLatio.WebActivity"
             android:exported="true" />
 

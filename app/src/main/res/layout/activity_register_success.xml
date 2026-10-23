@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="32dp"
+    android:background="@color/white">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_eco"
+        app:tint="@color/green_primary"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Registrasi Berhasil!"
+        android:textColor="@color/text_dark"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvInfoRegistrasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textAlignment="center"
+        android:textColor="@color/text_gray"
+        android:textSize="14sp"
+        android:lineSpacingExtra="4dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnKeHalamanLogin"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_marginTop="36dp"
+        android:text="Kembali ke Halaman Login"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/green_primary"
+        app:cornerRadius="14dp" />
+
+</LinearLayout>

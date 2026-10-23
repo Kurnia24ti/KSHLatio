@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- ===================================================================== -->
+<!-- KUIS PERTEMUAN 8 - QUIZ TIF                                            -->
+<!-- File: activity_login.xml                                             -->
+<!-- ===================================================================== -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -15,7 +19,7 @@
         <!-- HEADER / HERO SECTION -->
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="250dp">
+            android:layout_height="180dp">
 
             <!-- Background Kebun Sawit -->
             <ImageView
@@ -38,9 +42,9 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:paddingStart="20dp"
-                android:paddingTop="28dp"
+                android:paddingTop="20dp"
                 android:paddingEnd="20dp"
-                android:paddingBottom="40dp">
+                android:paddingBottom="24dp">
 
                 <!-- Logo SawitMON (Pojok Kiri Atas) -->
                 <LinearLayout
@@ -50,18 +54,18 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
                         android:src="@drawable/ic_sawit_logo"
                         tools:ignore="ContentDescription" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
+                        android:layout_marginStart="8dp"
                         android:text="@string/sawitmon_app_name"
                         android:textColor="@color/white"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:textStyle="bold" />
                 </LinearLayout>
 
@@ -76,17 +80,16 @@
                     android:layout_height="wrap_content"
                     android:text="@string/hero_title"
                     android:textColor="@color/white"
-                    android:textSize="22sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
+                    android:layout_marginTop="4dp"
                     android:text="@string/hero_subtitle"
                     android:textColor="#DDFFFFFF"
-                    android:textSize="12sp"
-                    android:lineSpacingExtra="2dp" />
+                    android:textSize="11sp" />
             </LinearLayout>
         </FrameLayout>
 
@@ -94,13 +97,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-24dp"
+            android:layout_marginTop="-20dp"
             android:background="@drawable/bg_sheet"
             android:orientation="vertical"
             android:paddingStart="20dp"
-            android:paddingTop="24dp"
+            android:paddingTop="20dp"
             android:paddingEnd="20dp"
-            android:paddingBottom="24dp">
+            android:paddingBottom="20dp">
 
             <!-- Title Form -->
             <TextView
@@ -108,22 +111,22 @@
                 android:layout_height="wrap_content"
                 android:text="@string/form_title"
                 android:textColor="@color/text_dark"
-                android:textSize="24sp"
+                android:textSize="22sp"
                 android:textStyle="bold" />
 
             <!-- Pilihan Hak Akses -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
+                android:layout_marginTop="4dp"
                 android:text="@string/form_subtitle"
                 android:textColor="@color/text_gray"
-                android:textSize="13sp" />
+                android:textSize="12sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="16dp"
                 android:text="@string/label_hak_akses"
                 android:textColor="@color/text_dark"
                 android:textSize="13sp"
@@ -139,7 +142,7 @@
                 <TextView
                     android:id="@+id/btnPetani"
                     android:layout_width="wrap_content"
-                    android:layout_height="42dp"
+                    android:layout_height="40dp"
                     android:background="@drawable/bg_role"
                     android:drawablePadding="8dp"
                     android:gravity="center_vertical"
@@ -156,7 +159,7 @@
                 <TextView
                     android:id="@+id/btnPekerja"
                     android:layout_width="wrap_content"
-                    android:layout_height="42dp"
+                    android:layout_height="40dp"
                     android:layout_marginStart="10dp"
                     android:background="@drawable/bg_role"
                     android:drawablePadding="8dp"
@@ -170,20 +173,22 @@
                     app:drawableTint="@color/role_text" />
             </LinearLayout>
 
-            <!-- Input Email -->
+            <!-- ============================================================= -->
+            <!-- SOAL 2: INPUT USERNAME / EMAIL UNTUK LOGIN                   -->
+            <!-- ============================================================= -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
-                android:text="@string/label_email"
+                android:layout_marginTop="16dp"
+                android:text="Username / Email"
                 android:textColor="@color/text_dark"
                 android:textSize="13sp"
                 android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_marginTop="8dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="6dp"
                 android:background="@drawable/bg_input"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
@@ -202,20 +207,22 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="10dp"
-                    android:autofillHints="emailAddress"
+                    android:autofillHints="username"
                     android:background="@null"
-                    android:hint="@string/hint_email"
+                    android:hint="Masukkan username atau email"
                     android:inputType="textEmailAddress"
                     android:textColor="@color/text_dark"
                     android:textColorHint="#9AA8A0"
                     android:textSize="14sp" />
             </LinearLayout>
 
-            <!-- Input Password -->
+            <!-- ============================================================= -->
+            <!-- SOAL 2: INPUT PASSWORD UNTUK LOGIN                            -->
+            <!-- ============================================================= -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="14dp"
                 android:text="@string/label_password"
                 android:textColor="@color/text_dark"
                 android:textSize="13sp"
@@ -223,8 +230,8 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:layout_marginTop="8dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="6dp"
                 android:background="@drawable/bg_input"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
@@ -265,7 +272,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
+                android:layout_marginTop="12dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
@@ -288,18 +295,20 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <!-- Tombol Utama -->
+            <!-- ============================================================= -->
+            <!-- SOAL 2: TOMBOL UTAMA LOGIN (AKSI EVALUASI KONDISI 1 & 2)      -->
+            <!-- ============================================================= -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnLogin"
                 android:layout_width="match_parent"
-                android:layout_height="54dp"
-                android:layout_marginTop="16dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="14dp"
                 android:text="@string/btn_login_dashboard"
                 android:textColor="@color/white"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 app:backgroundTint="@color/green_primary"
-                app:cornerRadius="14dp"
+                app:cornerRadius="12dp"
                 app:icon="@drawable/ic_arrow_forward"
                 app:iconGravity="textEnd"
                 app:iconTint="@color/white" />
@@ -308,7 +317,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="16dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
@@ -334,39 +343,29 @@
                     android:background="@color/border" />
             </LinearLayout>
 
-            <!-- Tombol Google -->
-            <LinearLayout
-                android:id="@+id/btnGoogle"
+            <!-- ============================================================= -->
+            <!-- SOAL 1: TOMBOL REGISTER WITH GMAIL                            -->
+            <!-- ============================================================= -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRegisterGmail"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/bg_outline"
-                android:clickable="true"
-                android:focusable="true"
-                android:gravity="center"
-                android:orientation="horizontal">
+                android:layout_marginTop="14dp"
+                android:text="Register With Gmail"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:backgroundTint="#EA4335"
+                app:cornerRadius="12dp"
+                app:icon="@drawable/ic_mail"
+                app:iconGravity="textStart"
+                app:iconTint="@color/white" />
 
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/ic_google"
-                    tools:ignore="ContentDescription" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:text="@string/btn_login_google"
-                    android:textColor="@color/text_dark"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <!-- Footer -->
+            <!-- Footer / Link Pendaftaran -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="20dp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -377,6 +376,7 @@
                     android:textColor="@color/text_gray"
                     android:textSize="13sp" />
 
+                <!-- SOAL 1: LINK DAFTAR SEKARANG -> ARAHKAN KE INPUT GMAIL -->
                 <TextView
                     android:id="@+id/tvDaftar"
                     android:layout_width="wrap_content"
