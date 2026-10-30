@@ -10,6 +10,7 @@ import android.os.Looper
 import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.ksh_latio.R
@@ -29,9 +30,16 @@ class SplashActivity : AppCompatActivity() {
             insets
         }
 
+        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
+        val isDarkMode = sharedPref.getBoolean("isDarkMode", false)
+        if (isDarkMode) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
+
         // Delay 2,5 detik sebelum mengecek SharedPreferences
         Handler(Looper.getMainLooper()).postDelayed({
-            val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
             val isLoggedIn = sharedPref.getBoolean("isLoggedIn", false) || sharedPref.getBoolean("isLogin", false)
 
             val intent = if (isLoggedIn) {

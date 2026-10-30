@@ -9,11 +9,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import com.example.ksh_latio.databinding.FragmentAkunBinding
 import com.example.KSHLatio.BaseActivity
 import com.example.KSHLatio.DetailSnackActivity
 import com.example.KSHLatio.WebActivity
+import com.example.KSHLatio.util.ToastHelper
 import com.example.KSHLatio.util.toDisplayName
 
 class AkunFragment : Fragment() {
@@ -38,6 +40,22 @@ class AkunFragment : Fragment() {
         binding.tvNama.text = nama
         binding.tvEmail.text = email
         binding.tvRole.text = pref.getString("role", "Petani")
+
+        // FITUR 3: Dark Mode / Light Mode Toggle
+        val isDarkMode = pref.getBoolean("isDarkMode", false)
+        binding.switchDarkMode.isChecked = isDarkMode
+
+        binding.switchDarkMode.setOnCheckedChangeListener { _, isChecked ->
+            pref.edit().putBoolean("isDarkMode", isChecked).apply()
+
+            if (isChecked) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                ToastHelper.showInfo(requireContext(), "Mode Gelap Diaktifkan 🌙")
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                ToastHelper.showInfo(requireContext(), "Mode Terang Diaktifkan ☀️")
+            }
+        }
 
         binding.btnBantuan.setOnClickListener {
             startActivity(Intent(requireContext(), WebActivity::class.java))
