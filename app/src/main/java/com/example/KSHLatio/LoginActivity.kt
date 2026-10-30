@@ -2,7 +2,6 @@
 
 package com.example.KSHLatio
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
@@ -108,9 +107,6 @@ class LoginActivity : AppCompatActivity() {
 
         findViewById<TextView>(R.id.tvLupa)?.setOnClickListener {
             ToastHelper.showInfo(this, "Fitur lupa password segera hadir")
-        }
-        findViewById<LinearLayout>(R.id.btnGoogle)?.setOnClickListener {
-            ToastHelper.showInfo(this, "Login Google segera hadir")
         }
     }
 
