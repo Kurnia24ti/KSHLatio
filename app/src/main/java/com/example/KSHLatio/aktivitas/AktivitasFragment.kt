@@ -4,12 +4,10 @@ package com.example.KSHLatio.aktivitas
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -17,10 +15,10 @@ import com.example.ksh_latio.R
 import com.example.ksh_latio.databinding.FragmentAktivitasBinding
 import com.example.KSHLatio.BaseActivity
 import com.example.KSHLatio.data.DummyData
+import com.example.KSHLatio.util.ToastHelper
 import com.example.KSHLatio.util.addStatusStat
 import com.example.KSHLatio.util.toDisplayName
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.android.material.snackbar.Snackbar
 
 class AktivitasFragment : Fragment() {
 
@@ -45,32 +43,55 @@ class AktivitasFragment : Fragment() {
 
         binding.flBell.setOnClickListener {
             binding.viewNotifDot.visibility = View.INVISIBLE
-            Snackbar.make(binding.root, "Semua notifikasi sudah dibaca", Snackbar.LENGTH_SHORT)
-                .setAction("Tutup") { Log.e("Info Snackbar", "Snackbar ditutup") }
-                .show()
+            ToastHelper.showInfo(requireContext(), "Semua notifikasi sudah dibaca")
         }
 
         binding.btnBuatAksi.setOnClickListener { showCreateActionDialog() }
 
         binding.tvHariIni.setOnClickListener {
-            Snackbar.make(binding.root, "Menampilkan ringkasan hari ini", Snackbar.LENGTH_SHORT).show()
+            ToastHelper.showInfo(requireContext(), "Menampilkan ringkasan hari ini")
+        }
+
+        // FITUR 1: Interactive Calendar Listener
+        binding.calendarView.setOnDateChangeListener { _, year, month, dayOfMonth ->
+            val formattedDate = "$dayOfMonth ${DummyData.bulan.getOrElse(month) { "Bulan" }} $year"
+            binding.tvCalendarSelectedDate.text = "$dayOfMonth/${month + 1}/$year"
+
+            val sampleAgenda = when (dayOfMonth % 3) {
+                0 -> "• 08.00 WIB: Pemupukan NPK Lahan Blok A\n• 14.00 WIB: Inspeksi Kualitas Panen Kelapa Sawit"
+                1 -> "• 07.30 WIB: Panen Kelapa Sawit Blok C (Target 1,5 Ton)\n• 13.00 WIB: Timbang Hasil Panen"
+                else -> "• 09.00 WIB: Pembersihan Gulma & Perawatan Pohon Blok D\n• 15.30 WIB: Evaluasi Kinerja Pegawai"
+            }
+            binding.tvAgendaTitle.text = "🌱 Agenda Perkebunan ($formattedDate):"
+            binding.tvAgendaContent.text = sampleAgenda
+
+            // FITUR 2: Trigger Toast Notification
+            ToastHelper.showSuccess(requireContext(), "Jadwal Perkebunan Tanggal $dayOfMonth dipilih")
         }
 
         binding.rowStat1.addStatusStat("Pengajuan", "0", "baru",
-            R.drawable.ic_description, R.color.primary, R.color.mint) { toastInfo("Pengajuan baru: 0") }
+            R.drawable.ic_description, R.color.primary, R.color.mint) {
+            ToastHelper.showInfo(requireContext(), "Pengajuan baru: 0")
+        }
         binding.rowStat1.addStatusStat("Penanganan", "0", "aktif",
-            R.drawable.ic_build, R.color.blue, R.color.blue_soft) { toastInfo("Penanganan aktif: 0") }
+            R.drawable.ic_build, R.color.blue, R.color.blue_soft) {
+            ToastHelper.showInfo(requireContext(), "Penanganan aktif: 0")
+        }
         binding.rowStat2.addStatusStat("Total panen", "0 Kg", "bulan ini",
-            R.drawable.ic_inventory, R.color.amber, R.color.amber_soft) { toastInfo("Total panen bulan ini: 0 Kg") }
+            R.drawable.ic_inventory, R.color.amber, R.color.amber_soft) {
+            ToastHelper.showInfo(requireContext(), "Total panen bulan ini: 0 Kg")
+        }
         binding.rowStat2.addStatusStat("Aktivitas hari ini", "0", "kegiatan",
-            R.drawable.ic_show_chart, R.color.purple, R.color.purple_soft) { toastInfo("Aktivitas hari ini: 0 kegiatan") }
+            R.drawable.ic_show_chart, R.color.purple, R.color.purple_soft) {
+            ToastHelper.showInfo(requireContext(), "Aktivitas hari ini: 0 kegiatan")
+        }
 
         binding.tvBulan.setOnClickListener {
             MaterialAlertDialogBuilder(requireContext())
                 .setTitle("Pilih bulan")
                 .setItems(DummyData.bulan) { _, which ->
                     binding.tvBulan.text = "${DummyData.bulan[which]} ▾"
-                    Snackbar.make(binding.root, "Menampilkan ${DummyData.bulan[which]}", Snackbar.LENGTH_SHORT).show()
+                    ToastHelper.showInfo(requireContext(), "Menampilkan ${DummyData.bulan[which]}")
                 }
                 .show()
         }
@@ -94,7 +115,7 @@ class AktivitasFragment : Fragment() {
         selectTab(binding.tabPengajuan)
 
         binding.tvLihatSemuaAkt.setOnClickListener {
-            Snackbar.make(binding.root, "Belum ada aktivitas untuk ditampilkan", Snackbar.LENGTH_SHORT).show()
+            ToastHelper.showInfo(requireContext(), "Belum ada aktivitas untuk ditampilkan")
         }
     }
 
@@ -103,15 +124,10 @@ class AktivitasFragment : Fragment() {
         MaterialAlertDialogBuilder(requireContext())
             .setTitle("Buat aksi")
             .setItems(pilihan) { _, which ->
-                Snackbar.make(binding.root, "Aksi dipilih: ${pilihan[which]}", Snackbar.LENGTH_SHORT).show()
+                ToastHelper.showSuccess(requireContext(), "Aksi berhasil dibuat: ${pilihan[which]}")
             }
             .setNegativeButton("Batal") { dialog, _ -> dialog.dismiss() }
             .show()
-    }
-
-    private fun toastInfo(message: String) {
-        Log.e("Klik kartu", message)
-        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
     }
 
     override fun onDestroyView() {
