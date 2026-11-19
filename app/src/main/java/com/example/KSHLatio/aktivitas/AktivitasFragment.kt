@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -18,7 +17,9 @@ import com.example.KSHLatio.data.DummyData
 import com.example.KSHLatio.util.ToastHelper
 import com.example.KSHLatio.util.addStatusStat
 import com.example.KSHLatio.util.toDisplayName
+import com.google.android.material.chip.Chip
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.tabs.TabLayoutMediator
 
 class AktivitasFragment : Fragment() {
 
@@ -52,6 +53,15 @@ class AktivitasFragment : Fragment() {
             ToastHelper.showInfo(requireContext(), "Menampilkan ringkasan hari ini")
         }
 
+        // MODUL PERTEMUAN 9: Chip & ChipGroup Filter Listener
+        binding.chipGroupFilter.setOnCheckedStateChangeListener { group, checkedIds ->
+            val selectedChipId = checkedIds.firstOrNull()
+            if (selectedChipId != null) {
+                val chip = group.findViewById<Chip>(selectedChipId)
+                ToastHelper.showInfo(requireContext(), "Filter Lahan: ${chip.text}")
+            }
+        }
+
         // FITUR 1: Interactive Calendar Listener
         binding.calendarView.setOnDateChangeListener { _, year, month, dayOfMonth ->
             val formattedDate = "$dayOfMonth ${DummyData.bulan.getOrElse(month) { "Bulan" }} $year"
@@ -69,21 +79,21 @@ class AktivitasFragment : Fragment() {
             ToastHelper.showSuccess(requireContext(), "Jadwal Perkebunan Tanggal $dayOfMonth dipilih")
         }
 
-        binding.rowStat1.addStatusStat("Pengajuan", "0", "baru",
+        binding.rowStat1.addStatusStat("Pengajuan", "3", "baru",
             R.drawable.ic_description, R.color.primary, R.color.mint) {
-            ToastHelper.showInfo(requireContext(), "Pengajuan baru: 0")
+            ToastHelper.showInfo(requireContext(), "Pengajuan baru: 3 perlu ditinjau")
         }
-        binding.rowStat1.addStatusStat("Penanganan", "0", "aktif",
+        binding.rowStat1.addStatusStat("Penanganan", "2", "aktif",
             R.drawable.ic_build, R.color.blue, R.color.blue_soft) {
-            ToastHelper.showInfo(requireContext(), "Penanganan aktif: 0")
+            ToastHelper.showInfo(requireContext(), "Penanganan aktif: 2 kegiatan diproses")
         }
-        binding.rowStat2.addStatusStat("Total panen", "0 Kg", "bulan ini",
+        binding.rowStat2.addStatusStat("Total panen", "2.437 Kg", "bulan ini",
             R.drawable.ic_inventory, R.color.amber, R.color.amber_soft) {
-            ToastHelper.showInfo(requireContext(), "Total panen bulan ini: 0 Kg")
+            ToastHelper.showInfo(requireContext(), "Total panen bulan ini: 2.437 Kg")
         }
-        binding.rowStat2.addStatusStat("Aktivitas hari ini", "0", "kegiatan",
+        binding.rowStat2.addStatusStat("Aktivitas hari ini", "5", "kegiatan",
             R.drawable.ic_show_chart, R.color.purple, R.color.purple_soft) {
-            ToastHelper.showInfo(requireContext(), "Aktivitas hari ini: 0 kegiatan")
+            ToastHelper.showInfo(requireContext(), "Aktivitas hari ini: 5 kegiatan terpantau")
         }
 
         binding.tvBulan.setOnClickListener {
@@ -96,26 +106,35 @@ class AktivitasFragment : Fragment() {
                 .show()
         }
 
-        val tabs = listOf(binding.tabPengajuan, binding.tabPenanganan, binding.tabPanen)
-        fun selectTab(active: TextView) {
-            tabs.forEach { tab ->
-                val on = tab == active
-                tab.setBackgroundResource(if (on) R.drawable.bg_tab_active else 0)
-                tab.setTextColor(ContextCompat.getColor(requireContext(), if (on) R.color.white else R.color.text_gray))
-                tab.paint.isFakeBoldText = on
-                tab.invalidate()
+        // MODUL PERTEMUAN 11: Setup ViewPager2 & TabLayout dengan Adapter & Badge
+        val tabsAdapter = AktivitasPagerAdapter(this)
+        binding.viewPagerAktivitas.adapter = tabsAdapter
+
+        TabLayoutMediator(binding.tabLayoutAktivitas, binding.viewPagerAktivitas) { tab, position ->
+            when (position) {
+                0 -> {
+                    tab.text = "Pengajuan"
+                    tab.icon = ContextCompat.getDrawable(requireContext(), R.drawable.ic_description)
+                    val badge = tab.getOrCreateBadge()
+                    badge.isVisible = true
+                    badge.number = 3
+                }
+                1 -> {
+                    tab.text = "Penanganan"
+                    tab.icon = ContextCompat.getDrawable(requireContext(), R.drawable.ic_build)
+                    val badge = tab.getOrCreateBadge()
+                    badge.isVisible = true
+                    badge.number = 2
+                }
+                2 -> {
+                    tab.text = "Panen"
+                    tab.icon = ContextCompat.getDrawable(requireContext(), R.drawable.ic_eco)
+                }
             }
-            binding.tvEmptyTab.text = when (active.id) {
-                R.id.tabPengajuan -> "Belum ada aktivitas terbaru"
-                R.id.tabPenanganan -> "Belum ada penanganan terbaru"
-                else -> "Belum ada data panen terbaru"
-            }
-        }
-        tabs.forEach { tab -> tab.setOnClickListener { selectTab(tab) } }
-        selectTab(binding.tabPengajuan)
+        }.attach()
 
         binding.tvLihatSemuaAkt.setOnClickListener {
-            ToastHelper.showInfo(requireContext(), "Belum ada aktivitas untuk ditampilkan")
+            ToastHelper.showInfo(requireContext(), "Menampilkan seluruh aktivitas perkebunan")
         }
     }
 

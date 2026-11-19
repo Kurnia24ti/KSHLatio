@@ -145,6 +145,45 @@
                 android:layout_width="match_parent" android:layout_height="wrap_content"
                 android:orientation="horizontal" />
 
+            <!-- MODUL PERTEMUAN 9: Chip & ChipGroup Filter -->
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroupFilter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginHorizontal="4dp"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipSemua"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Semua Lahan" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipBlokA"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Blok A" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipBlokC"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Blok C" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipBlokD"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Blok D" />
+            </com.google.android.material.chip.ChipGroup>
+
             <!-- FITUR 1: Interactive Calendar Section -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
@@ -273,7 +312,7 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Aktivitas Terbaru + tab segmented -->
+            <!-- MODUL PERTEMUAN 11: TabLayout + ViewPager2 Card -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent" android:layout_height="wrap_content"
                 android:layout_marginHorizontal="4dp" android:layout_marginTop="12dp"
@@ -294,29 +333,22 @@
                             android:textSize="11sp" android:textStyle="bold" />
                     </LinearLayout>
 
-                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp" android:background="@drawable/bg_tab_track"
-                        android:orientation="horizontal" android:padding="4dp">
-                        <TextView android:id="@+id/tabPengajuan"
-                            android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
-                            android:gravity="center" android:paddingVertical="9dp"
-                            android:text="@string/tab_pengajuan" android:textSize="11sp" />
-                        <TextView android:id="@+id/tabPenanganan"
-                            android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
-                            android:gravity="center" android:paddingVertical="9dp"
-                            android:text="@string/tab_penanganan" android:textSize="11sp" />
-                        <TextView android:id="@+id/tabPanen"
-                            android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
-                            android:gravity="center" android:paddingVertical="9dp"
-                            android:text="@string/tab_panen" android:textSize="11sp" />
-                    </LinearLayout>
+                    <!-- TabLayout (Pertemuan 11) -->
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/tabLayoutAktivitas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        app:tabIndicatorColor="@color/primary"
+                        app:tabSelectedTextColor="@color/primary"
+                        app:tabTextColor="@color/text_gray" />
 
-                    <TextView android:id="@+id/tvEmptyTab"
-                        android:layout_width="match_parent" android:layout_height="130dp"
-                        android:drawableTop="@drawable/ic_assignment" android:drawableTint="@color/text_gray"
-                        android:drawablePadding="8dp" android:gravity="center"
-                        android:textColor="@color/text_gray" android:textSize="12sp"
-                        tools:ignore="UseCompatTextViewDrawableXml" />
+                    <!-- ViewPager2 (Pertemuan 11) -->
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/viewPagerAktivitas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
         </LinearLayout>
