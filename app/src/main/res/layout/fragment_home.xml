@@ -142,7 +142,7 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Lab Praktikum Modul P2-P10 -->
+            <!-- Lab Praktikum Modul P2-P11 -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent" android:layout_height="wrap_content"
                 android:layout_marginHorizontal="4dp" android:layout_marginTop="12dp"
@@ -153,7 +153,7 @@
 
                     <TextView
                         android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="🧪 Lab Praktikum (Modul Pertemuan 2 - 10)"
+                        android:text="🧪 Lab Praktikum (Modul Pertemuan 2 - 11)"
                         android:textColor="@color/primary_dark" android:textSize="14sp" android:textStyle="bold" />
 
                     <androidx.gridlayout.widget.GridLayout
@@ -234,6 +234,17 @@
                             android:layout_width="wrap_content"
                             android:layout_height="40dp"
                             android:text="P10: TabLayout &amp; RecyclerView"
+                            android:textSize="10sp"
+                            app:backgroundTint="@color/primary"
+                            app:cornerRadius="8dp"
+                            app:layout_columnWeight="1"
+                            app:layout_gravity="fill_horizontal" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnToOnboarding"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="P11: OnBoarding (Dots)"
                             android:textSize="10sp"
                             app:backgroundTint="@color/primary"
                             app:cornerRadius="8dp"

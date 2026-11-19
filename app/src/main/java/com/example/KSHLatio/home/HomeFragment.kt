@@ -25,6 +25,7 @@ import com.example.KSHLatio.home.pertemuan_5.FifthActivity
 import com.example.KSHLatio.home.pertemuan_6.SixthActivity
 import com.example.KSHLatio.home.pertemuan_9.NinthActivity
 import com.example.KSHLatio.message.NotifikasiActivity
+import com.example.KSHLatio.message.tutorial.TutorialMessageActivity
 import com.example.KSHLatio.util.addAktivitas
 import com.example.KSHLatio.util.addBigStat
 import com.example.KSHLatio.util.addOpsStat
@@ -93,7 +94,7 @@ class HomeFragment : Fragment() {
                 .show()
         }
 
-        // Navigasi Lab Praktikum (Pertemuan 2 - 10 Modul)
+        // Navigasi Lab Praktikum (Pertemuan 2 - 11 Modul)
         binding.btnToSecond.setOnClickListener {
             startActivity(Intent(requireContext(), SecondActivity::class.java))
         }
@@ -118,6 +119,9 @@ class HomeFragment : Fragment() {
         }
         binding.btnToTenth.setOnClickListener {
             startActivity(Intent(requireContext(), TenthActivity::class.java))
+        }
+        binding.btnToOnboarding.setOnClickListener {
+            startActivity(Intent(requireContext(), TutorialMessageActivity::class.java))
         }
 
         binding.tvJumlahAktivitas.text = DummyData.aktivitasTerbaru.size.toString()
