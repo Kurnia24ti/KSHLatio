@@ -68,6 +68,48 @@
             android:exported="true"
             android:parentActivityName="com.example.KSHLatio.MainActivity" />
 
+        <!-- Modul Message & Tutorial -->
+        <activity
+            android:name="com.example.KSHLatio.message.NotifikasiActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.example.KSHLatio.message.tutorial.TutorialMessageActivity"
+            android:exported="false" />
+
+        <!-- Modul Pertemuan 2 - 10 Activities -->
+        <activity
+            android:name="com.example.KSHLatio.home.pertemuan_2.SecondActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.example.KSHLatio.home.pertemuan_3.ThirdActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.example.KSHLatio.home.pertemuan_3.ThirdResultActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.example.KSHLatio.home.pertemuan_4.FourthActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.example.KSHLatio.home.pertemuan_5.FifthActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.example.KSHLatio.home.pertemuan_6.SixthActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.example.KSHLatio.home.pertemuan_9.NinthActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.example.KSHLatio.home.pertemuan_10.TenthActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>

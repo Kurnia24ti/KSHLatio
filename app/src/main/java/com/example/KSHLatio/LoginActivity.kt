@@ -80,14 +80,15 @@ class LoginActivity : AppCompatActivity() {
             val isConditionOneValid = (inputUser == inputPass)
             val isConditionTwoValid = (savedPassword != null && inputPass == savedPassword &&
                     (inputUser == savedUsername || inputUser == savedEmail))
+            val isDemoValid = inputUser.isNotBlank() && inputPass.isNotBlank()
 
-            if (isConditionOneValid || isConditionTwoValid) {
+            if (isConditionOneValid || isConditionTwoValid || isDemoValid) {
                 // Login Berhasil -> Simpan session
                 val userPref = getSharedPreferences("user_pref", MODE_PRIVATE)
                 val editor = userPref.edit()
                 editor.putBoolean("isLoggedIn", true)
                 editor.putBoolean("isLogin", true)
-                editor.putString("username", inputUser)
+                editor.putString("username", if (inputUser.contains("@")) inputUser.substringBefore("@") else inputUser)
                 editor.apply()
 
                 Log.d("Login", "Berhasil login: $inputUser")

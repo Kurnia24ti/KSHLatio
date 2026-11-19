@@ -142,6 +142,108 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
+            <!-- Lab Praktikum Modul P2-P10 -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp" android:layout_marginTop="12dp"
+                app:cardBackgroundColor="@color/white" app:cardCornerRadius="20dp" app:cardElevation="1dp"
+                app:strokeColor="@color/stroke" app:strokeWidth="1dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="🧪 Lab Praktikum (Modul Pertemuan 2 - 10)"
+                        android:textColor="@color/primary_dark" android:textSize="14sp" android:textStyle="bold" />
+
+                    <androidx.gridlayout.widget.GridLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        app:columnCount="2"
+                        app:useDefaultMargins="true">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnToSecond"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="P2: Kotlin &amp; findViewById"
+                            android:textSize="10sp"
+                            app:backgroundTint="@color/primary"
+                            app:cornerRadius="8dp"
+                            app:layout_columnWeight="1"
+                            app:layout_gravity="fill_horizontal" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnToThird"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="P3: ViewBinding &amp; Intent"
+                            android:textSize="10sp"
+                            app:backgroundTint="@color/primary"
+                            app:cornerRadius="8dp"
+                            app:layout_columnWeight="1"
+                            app:layout_gravity="fill_horizontal" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnToFourth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="P4: Intent Extra &amp; Feedback"
+                            android:textSize="10sp"
+                            app:backgroundTint="@color/primary"
+                            app:cornerRadius="8dp"
+                            app:layout_columnWeight="1"
+                            app:layout_gravity="fill_horizontal" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnToFifth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="P5: Toolbar &amp; WebView"
+                            android:textSize="10sp"
+                            app:backgroundTint="@color/primary"
+                            app:cornerRadius="8dp"
+                            app:layout_columnWeight="1"
+                            app:layout_gravity="fill_horizontal" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnToSixth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="P6: Fragment Transaction"
+                            android:textSize="10sp"
+                            app:backgroundTint="@color/primary"
+                            app:cornerRadius="8dp"
+                            app:layout_columnWeight="1"
+                            app:layout_gravity="fill_horizontal" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnToNinth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="P9: Material Components"
+                            android:textSize="10sp"
+                            app:backgroundTint="@color/primary"
+                            app:cornerRadius="8dp"
+                            app:layout_columnWeight="1"
+                            app:layout_gravity="fill_horizontal" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnToTenth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="P10: TabLayout &amp; RecyclerView"
+                            android:textSize="10sp"
+                            app:backgroundTint="@color/primary"
+                            app:cornerRadius="8dp"
+                            app:layout_columnWeight="1"
+                            app:layout_gravity="fill_horizontal" />
+
+                    </androidx.gridlayout.widget.GridLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
             <!-- Aktivitas Terbaru -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent" android:layout_height="wrap_content"

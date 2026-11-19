@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="32dp">
+
+    <ImageView
+        android:id="@+id/ivTutorialIcon"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@drawable/bg_circle_mint"
+        android:padding="24dp"
+        android:src="@drawable/ic_eco"
+        app:tint="@color/primary"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tvTutorialTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:textColor="@color/primary_dark"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        tools:text="Fitur Notifikasi Realtime" />
+
+    <TextView
+        android:id="@+id/tvTutorialDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:lineSpacingExtra="4dp"
+        android:textColor="@color/text_gray"
+        android:textSize="14sp"
+        tools:text="Dapatkan informasi aktivitas panen, pemupukan, dan pengajuan laporan langsung dari mandor kebun Anda." />
+
+</LinearLayout>

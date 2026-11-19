@@ -7,6 +7,7 @@
     android:background="@color/bg_app">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent" android:layout_height="wrap_content"
         android:background="@color/white" app:elevation="0dp">
         <androidx.appcompat.widget.Toolbar android:id="@+id/toolbar"
@@ -46,7 +47,7 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="20dp"
                 app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="0dp"
@@ -96,6 +97,41 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:useMaterialThemeColors="true" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- MODUL PERTEMUAN 10: ListView dengan SimpleAdapter simple_list_item_2 -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/stroke"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:text="📋 Menu Pilihan &amp; Informasi (ListView P10)"
+                        android:textColor="@color/primary_dark"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <ListView
+                        android:id="@+id/listViewItems"
+                        android:layout_width="match_parent"
+                        android:layout_height="220dp"
+                        android:divider="@color/stroke"
+                        android:dividerHeight="1dp" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 

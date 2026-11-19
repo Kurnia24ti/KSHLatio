@@ -17,12 +17,19 @@ import com.example.ksh_latio.databinding.FragmentHomeBinding
 import com.example.KSHLatio.BaseActivity
 import com.example.KSHLatio.DetailSnackActivity
 import com.example.KSHLatio.data.DummyData
+import com.example.KSHLatio.home.pertemuan_10.TenthActivity
+import com.example.KSHLatio.home.pertemuan_2.SecondActivity
+import com.example.KSHLatio.home.pertemuan_3.ThirdActivity
+import com.example.KSHLatio.home.pertemuan_4.FourthActivity
+import com.example.KSHLatio.home.pertemuan_5.FifthActivity
+import com.example.KSHLatio.home.pertemuan_6.SixthActivity
+import com.example.KSHLatio.home.pertemuan_9.NinthActivity
+import com.example.KSHLatio.message.NotifikasiActivity
 import com.example.KSHLatio.util.addAktivitas
 import com.example.KSHLatio.util.addBigStat
 import com.example.KSHLatio.util.addOpsStat
 import com.example.KSHLatio.util.toDisplayName
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.android.material.snackbar.Snackbar
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -50,9 +57,7 @@ class HomeFragment : Fragment() {
 
         binding.tvAvatar.setOnClickListener { (requireActivity() as? BaseActivity)?.openDrawer() }
         binding.ivBell.setOnClickListener {
-            Snackbar.make(binding.root, "Tidak ada notifikasi baru", Snackbar.LENGTH_SHORT)
-                .setAction("Tutup") { Log.e("Info Snackbar", "Snackbar ditutup") }
-                .show()
+            startActivity(Intent(requireContext(), NotifikasiActivity::class.java))
         }
 
         binding.rowTop.addBigStat("Total Panen", "1477 Kg", "Panen bulan ini", badge = "+12%", filled = true) {
@@ -86,6 +91,33 @@ class HomeFragment : Fragment() {
                     binding.tvChartSub.text = "Tren panen selama ${DummyData.periode[which]} terakhir"
                 }
                 .show()
+        }
+
+        // Navigasi Lab Praktikum (Pertemuan 2 - 10 Modul)
+        binding.btnToSecond.setOnClickListener {
+            startActivity(Intent(requireContext(), SecondActivity::class.java))
+        }
+        binding.btnToThird.setOnClickListener {
+            startActivity(Intent(requireContext(), ThirdActivity::class.java))
+        }
+        binding.btnToFourth.setOnClickListener {
+            val intent = Intent(requireContext(), FourthActivity::class.java)
+            intent.putExtra("name", "Politeknik Caltex Rumbai")
+            intent.putExtra("from", "Rumbai")
+            intent.putExtra("age", 25)
+            startActivity(intent)
+        }
+        binding.btnToFifth.setOnClickListener {
+            startActivity(Intent(requireContext(), FifthActivity::class.java))
+        }
+        binding.btnToSixth.setOnClickListener {
+            startActivity(Intent(requireContext(), SixthActivity::class.java))
+        }
+        binding.btnToNinth.setOnClickListener {
+            startActivity(Intent(requireContext(), NinthActivity::class.java))
+        }
+        binding.btnToTenth.setOnClickListener {
+            startActivity(Intent(requireContext(), TenthActivity::class.java))
         }
 
         binding.tvJumlahAktivitas.text = DummyData.aktivitasTerbaru.size.toString()

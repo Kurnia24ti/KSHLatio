@@ -2,12 +2,14 @@
 
 package com.example.KSHLatio.akun
 
+import android.R
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SimpleAdapter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
@@ -54,6 +56,43 @@ class AkunFragment : Fragment() {
             } else {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
                 ToastHelper.showInfo(requireContext(), "Mode Terang Diaktifkan ☀️")
+            }
+        }
+
+        // MODUL PERTEMUAN 10: SimpleAdapter dengan android.R.layout.simple_list_item_2
+        val dataListWithDesc = listOf(
+            mapOf("title" to "Profil Saya", "desc" to "Kelola informasi data akun dan peran"),
+            mapOf("title" to "Info Harga TBS Sawit", "desc" to "Update tren harga TBS kelapa sawit nasional"),
+            mapOf("title" to "Lab Praktikum", "desc" to "Akses modul latihan praktikum P2 - P10"),
+            mapOf("title" to "Pusat Bantuan", "desc" to "Panduan penggunaan & FAQ aplikasi SawitMON"),
+            mapOf("title" to "Tentang SawitMON", "desc" to "Informasi versi platform monitoring digital v1.0")
+        )
+
+        val adapter = SimpleAdapter(
+            requireContext(),
+            dataListWithDesc,
+            R.layout.simple_list_item_2,
+            arrayOf("title", "desc"),
+            intArrayOf(R.id.text1, R.id.text2)
+        )
+        binding.listViewItems.adapter = adapter
+
+        binding.listViewItems.setOnItemClickListener { _, _, position, _ ->
+            val selectedItem = dataListWithDesc[position]
+            val title = selectedItem["title"] ?: ""
+            val desc = selectedItem["desc"] ?: ""
+            ToastHelper.showInfo(requireContext(), "Kamu memilih: $title ($desc)")
+
+            when (position) {
+                1 -> startActivity(Intent(requireContext(), WebActivity::class.java))
+                3 -> startActivity(Intent(requireContext(), WebActivity::class.java))
+                4 -> {
+                    val intent = Intent(requireContext(), DetailSnackActivity::class.java)
+                    intent.putExtra("title", "Tentang SawitMon")
+                    intent.putExtra("subtitle", "Platform Monitoring Perkebunan Kelapa Sawit Digital")
+                    intent.putExtra("value", "v1.0")
+                    startActivity(intent)
+                }
             }
         }
 
